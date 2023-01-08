@@ -11,6 +11,7 @@ class Worker(threading.Thread):
     self.num = num
     print("Enabled worker {}".format(self.num))
 
+  # Python thread class start function
   def run(self):
     while self.queue.qsize() > 0:
       # Get data from queue
