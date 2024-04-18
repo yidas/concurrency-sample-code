@@ -4,6 +4,7 @@ import os
 import queue
 import random
 
+# Usage of threading.Thread class
 class Worker(threading.Thread):
   def __init__(self, queue, num):
     threading.Thread.__init__(self)
