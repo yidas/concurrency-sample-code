@@ -7,7 +7,7 @@ def worker(task):
     print(task)
     return task
 
-if __name__ == '__main__':
+def main():
     # Define tasks
     tasks = range(1000)
 
@@ -23,3 +23,5 @@ if __name__ == '__main__':
         final_results = [future.result() for future in concurrent.futures.as_completed(futures)]
 
     print("Final Results:", final_results)
+
+main()
