@@ -1,9 +1,14 @@
-import multiprocessing
+import multiprocessing, time
 
 def worker(i, shared_dict, shared_list, lock):
+    # print("Current count: ", shared_dict['count'])
     with lock:
-        shared_dict['count'] += 1 
+        shared_dict['count'] += 0.5
+        sub_func(shared_dict)
     shared_list.append(i)
+
+def sub_func(shared_dict):
+    shared_dict['count'] += 0.5
 
 if __name__ == "__main__":
     with multiprocessing.Manager() as manager:
